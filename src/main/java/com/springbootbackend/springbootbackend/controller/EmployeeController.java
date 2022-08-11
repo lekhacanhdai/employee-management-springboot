@@ -3,7 +3,7 @@ package com.springbootbackend.springbootbackend.controller;
 import com.springbootbackend.springbootbackend.exception.ResourceNotFoundException;
 import com.springbootbackend.springbootbackend.model.Employee;
 import com.springbootbackend.springbootbackend.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
@@ -13,10 +13,11 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(value = "api/v1/")
+@RequiredArgsConstructor
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
+
+    private final EmployeeRepository employeeRepository;
 
 //    get all employee
 
